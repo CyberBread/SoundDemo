@@ -30,11 +30,13 @@ public class WeaponController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && _isCanShoot)
         {
+
             Debug.Log("Shoot");
+            _isCanShoot = false;
             _shootVFX.Play();
             _weaponAnimator.Play("Armature|Shoot");
         }
-        else if(Input.GetKeyDown(KeyCode.R) && _isCanShoot)
+        else if (Input.GetKeyDown(KeyCode.R) && _isCanShoot)
         {
             _weaponAnimator.Play("Armature|Reload");
         }
